@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reine Tea Party - Submissions</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link rel="stylesheet" href="{% static 'home/fontawesome/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'home/fontawesome/css/brands.css' %}">
+    <link rel="stylesheet" href="{% static 'home/fontawesome/css/solid.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/meptember26.css' %}">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'home/js/meptember26.js' %}" defer></script>
+</head>
+<body>
+    <main>
+        <section class="section">
+            <div class="container">
+                <h1 class="title" style="color: black;">Birthday Submissions</h1>
+                <p class="subtitle" style="color: black;">Click a submission to view the artwork and message</p>
+
+                <div id="submission_container" class="submission-grid">
+                    <p>Loading submissions...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

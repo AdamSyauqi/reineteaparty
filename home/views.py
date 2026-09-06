@@ -11,8 +11,11 @@ from django.urls import reverse
 from django.conf import settings
 # Create your views here.
 
-def tailwind_test(request):
-    return render(request, 'home/home_tailwind.html')
+def new_home(request):
+    context = {
+        'digital_ocean_url': settings.R2_2026_BUCKET
+    }
+    return render(request, 'home/new_home.html', context)
 
 def reineistriauki(request):
     return redirect('home:meptember24')
@@ -56,7 +59,7 @@ def home(request):
 def increment_counter(request):
     try:
         if request.method == "POST":
-            counter, created = ClickCounter.objects.get_or_create(id=1)
+            counter, _ = ClickCounter.objects.get_or_create(id=1)
             counter.count += 1
 
             # Define the threshold for resetting the counter
@@ -163,25 +166,34 @@ def wrap_text(text, font, max_width):
     lines = []
     words = text.split(' ')
     current_line = ''
-    
+
+    def text_width(value):
+        bbox = font.getbbox(value)
+        return bbox[2] - bbox[0]
+
     for word in words:
-        if font.getsize(word)[0] > max_width:
+        if text_width(word) > max_width:
             if current_line:
                 lines.append(current_line)
                 current_line = ''
+
             part = ''
             for char in word:
                 test_part = part + char
-                if font.getsize(test_part)[0] > max_width:
+
+                if text_width(test_part) > max_width:
                     if part:
                         lines.append(part + '-')
                     part = char
                 else:
                     part = test_part
+
             current_line = part
+
         else:
             test_line = f"{current_line} {word}" if current_line else word
-            if font.getsize(test_line)[0] > max_width:
+
+            if text_width(test_line) > max_width:
                 lines.append(current_line)
                 current_line = word
             else:
@@ -189,6 +201,7 @@ def wrap_text(text, font, max_width):
 
     if current_line:
         lines.append(current_line)
+
     return lines
 
 def generate_image(request):
@@ -225,7 +238,7 @@ def generate_image(request):
     while True:
         font = ImageFont.truetype(font_path, font_size)
         wrapped_text = wrap_text(text, font, max_width)
-        total_height = sum(font.getsize(line)[1] for line in wrapped_text)
+        total_height = total_height = sum(text_height(font, line) for line in wrapped_text)
         if start_y + total_height > end_y and font_size > 10:
             font_size -= 1  # Decrease font size by 1
         else:
@@ -236,7 +249,7 @@ def generate_image(request):
     for line in wrapped_text:
         x = start_x  # Text starts at the horizontal position of 100
         draw.text((x, y), line, font=font, fill=(26, 117, 255))
-        y += font.getsize(line)[1]  # Increment y for each new line using getsize()
+        y += text_height(font, line)
 
     # Save the image to a bytes buffer
     img_byte_arr = io.BytesIO()
@@ -247,3 +260,7 @@ def generate_image(request):
     res = HttpResponse(img_byte_arr, content_type='image/png')
     res['Content-Disposition'] = f'{disposition}; filename="reine_khodam.png"'
     return res
+
+def text_height(font, text):
+    bbox = font.getbbox(text)
+    return bbox[3] - bbox[1]

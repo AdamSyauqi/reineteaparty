@@ -534,14 +534,3 @@ function downloadImage() {
 document.getElementById('scrollToKhodamButton').addEventListener('click', function() {
     document.getElementById('khodam').scrollIntoView({ behavior: 'smooth' });
 });
-
-// function shareOnTwitter() {
-//     const imageUrl = document.getElementById('image-url').value;
-//     if (imageUrl) {
-//         const text = encodeURIComponent("This is my Khodam with Reine! Check out yours too!");
-//         const url = `https://twitter.com/intent/tweet?text=${text}&url=${encodeURIComponent(window.location.origin + imageUrl)}`;
-//         window.open(url, '_blank');
-//     } else {
-//         alert("Please confirm your selection first.");
-//     }
-// }

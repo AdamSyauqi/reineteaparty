@@ -1,0 +1,276 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: lightblue;
+}
+
+.submission-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.submission-card,
+.submission-card-button {
+    width: 200px;
+}
+
+.submission-card-button {
+    padding: 0;
+    border: none;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+}
+
+.submission-thumbnail {
+    display: block;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.submission-card-info {
+    padding-top: 8px;
+}
+
+.submission-card-name {
+    margin: 0;
+    font-size: 1rem;
+    color: #111;
+}
+
+.submission-modal .modal-content {
+    width: auto;
+    max-width: 92vw;
+    height: auto;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    overflow: visible;
+    background: transparent;
+}
+
+.submission-carousel {
+    position: relative;
+    flex: 0 1 auto;
+    min-width: 0;
+    max-width: 65vw;
+    max-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+.carousel-slides {
+    position: relative;
+    width: auto;
+    height: auto;
+    max-width: 65vw;
+    max-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-slide {
+    position: relative;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+}
+
+.carousel-slide.is-current {
+    display: flex;
+}
+
+.carousel-image {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 65vw;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 0, 0, 0.2);
+    border-top-color: #111;
+    border-radius: 50%;
+    animation: spinner-rotate 0.8s linear infinite;
+}
+
+@keyframes spinner-rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 4;
+    width: 48px;
+    height: 64px;
+    border: none;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.carousel-previous {
+    left: 12px;
+}
+
+.carousel-next {
+    right: 12px;
+}
+
+.carousel-counter {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    padding: 6px 12px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border-radius: 6px;
+}
+
+.submission-info {
+    flex: 0 0 360px;
+    width: 360px;
+    min-width: 300px;
+    max-height: 90vh;
+    padding: 40px;
+    overflow-y: auto;
+    background: white;
+    color: #111;
+}
+
+.submission-name {
+    margin-top: 0;
+    color: #111;
+}
+
+.submission-info hr {
+    background-color: #ddd;
+}
+
+.submission-message {
+    margin-top: 20px;
+    line-height: 1.6;
+    color: #111;
+}
+
+.social-media-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.social-media-link {
+    font-size: 24px;
+    color: #111;
+}
+
+.social-media-text {
+    color: #111;
+}
+
+.discord-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    font-size: 24px;
+    color: #111;
+    cursor: default;
+}
+
+.discord-tooltip {
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 8px);
+    transform: translateX(-50%);
+    display: none;
+    white-space: nowrap;
+    padding: 6px 10px;
+    background: #222;
+    color: white;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.discord-link:hover .discord-tooltip {
+    display: block;
+}
+
+.submission-modal.is-ultrawide .modal-content {
+    flex-direction: column;
+    align-items: center;
+}
+
+.submission-modal.is-ultrawide .submission-carousel,
+.submission-modal.is-ultrawide .carousel-slides,
+.submission-modal.is-ultrawide .carousel-image {
+    max-width: 90vw;
+    max-height: 65vh;
+}
+
+.submission-modal.is-ultrawide .submission-info {
+    flex: 0 0 auto;
+    width: 90vw;
+    min-width: 0;
+    max-height: 25vh;
+    padding: 24px 32px;
+}
+
+@media (max-width: 768px) {
+    .submission-modal .modal-content {
+        flex-direction: column;
+        align-items: center;
+        max-width: 95vw;
+        max-height: 94vh;
+    }
+
+    .submission-carousel,
+    .carousel-slides,
+    .carousel-image {
+        max-width: 95vw;
+        max-height: 60vh;
+    }
+
+    .submission-info {
+        flex: 0 0 auto;
+        width: 95vw;
+        min-width: 0;
+        max-height: 34vh;
+        padding: 24px;
+    }
+
+    .submission-grid {
+        justify-content: center;
+    }
+}
