@@ -10,5 +10,5 @@ urlpatterns = [
     path('generate-image/', views.generate_image, name='generate_image'),
     path('reineistriauki', views.reineistriauki, name="reineistriauki"),
     path('mepzine', views.mepzine, name="mepzine"),
-    path('new_home', views.new_home, name="new_home")
+    path('meptember26', views.meptember26, name="meptember26"),
 ]

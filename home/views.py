@@ -17,6 +17,30 @@ def new_home(request):
     }
     return render(request, 'home/new_home.html', context)
 
+def meptember26(request):
+    # Default values for month, day, and language
+    month = request.GET.get('month', 'January')
+    day = request.GET.get('day', 'Monday')
+    language = request.GET.get('language', 'English')
+
+    # Generate the Twitter image URL
+    twitter_image_url = request.build_absolute_uri(
+        reverse('home:generate_image') + f'?month={month}&day={day}&language={language}&disposition=inline'
+    )
+
+    context = {
+        "days": range(1, 32),
+        'digital_ocean_url': settings.R2_2026_BUCKET,
+        'twitter_image_url': twitter_image_url,
+        'youtube_api_key': os.environ['key'],
+        'holodex_api_key': os.environ['X_APIKEY'],
+        'hero_artwork': {
+            'src': '/static/home/img/ReineProfPicCrop.jpg',
+            'alt': 'Pavolia Reine Fan Art',
+        },
+    }
+    return render(request, 'home/meptember26.html', context)
+
 def reineistriauki(request):
     return redirect('home:meptember24')
 

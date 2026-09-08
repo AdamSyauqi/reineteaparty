@@ -1,0 +1,308 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reine Tea Party</title>
+
+    <meta content="reineteaparty/" property="og:title" />
+    <meta content="Celebrate Pavolia Reine's 2026 Birthday!" property="og:description" />
+    <meta content="http://www.reineteaparty.com/" property="og:url" />
+    <meta content="http://www.reineteaparty.com/static/home/img/mepcake.webp" property="og:image" />
+    <meta content="reineteaparty" property="site_name">
+
+    <meta content="http://www.reineteaparty.com/static/home/img/mepcake.webp" name="twitter:image:src" id="twitter-image">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="reineteaparty" id="twitter-title"/>
+    <meta name="twitter:description" content="Celebrate Pavolia Reine's 2026 Birthday!" id="twitter-desc"/>
+
+    <link rel="shortcut icon" href="{% static 'home/img/mepcake.webp' %}" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+
+    <link rel="stylesheet" href="{% static 'home/fontawesome/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'home/fontawesome/css/brands.css' %}">
+    <link rel="stylesheet" href="{% static 'home/fontawesome/css/solid.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/meptember26.css' %}">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'home/js/meptember26.js' %}" defer></script>
+</head>
+
+<body>
+<div class="cafe-page">
+    <header class="site-header">
+        <a class="wordmark" href="#top">
+            <strong>REINE</strong>
+            <span>TEA PARTY</span>
+        </a>
+
+        <nav aria-label="Primary navigation">
+            <a href="#about">About</a>
+            <a href="#schedule">Streams</a>
+            <a href="#khodam">Khodam</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#messages">Messages</a>
+        </nav>
+
+        <div class="date-chip">
+            <small>2026</small>
+            <strong>09.09</strong>
+        </div>
+    </header>
+
+    <main id="top">
+        <section class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">September 9, 2026</p>
+
+                <h1>
+                    Pavolia Reine's
+                    <strong>Tea Party</strong>
+                </h1>
+
+                <p class="introduction">
+                    Welcome to Pavolia Reine's Fan Website! Hope you'll enjoy your stay!
+                </p>
+
+                <div class="hero-actions">
+                    <a class="primary-action" href="#schedule">View schedule</a>
+                    <a class="secondary-action" href="#gallery">View artwork</a>
+                </div>
+            </div>
+            
+            <div class="hero-art-column">
+                <div class="hero-art">
+                    <img
+                        class="hero-image"
+                        src="{{ hero_artwork.src }}"
+                        alt="{{ hero_artwork.alt }}"
+                        loading="eager"
+                        decoding="async"
+                        fetchpriority="high"
+                    >
+                </div>
+
+                <p class="hero-caption">
+                    Art by Landacdeus
+                </p>
+            </div>
+        </section>
+
+        <input type="hidden" id="youtube-api-key" value="{{ youtube_api_key }}">
+        <input type="hidden" id="holodex-api-key" value="{{ holodex_api_key }}">
+        <input type="hidden" id="reineuuu" value="{% static 'home/img/reineuuu.gif' %}">
+        <input type="hidden" id="lfgreine" value="{% static 'home/img/lfgreine.gif' %}">
+        <input type="hidden" id="smol_reine" value="{% static 'home/img/smol_reine.gif' %}">
+
+        <section class="menu-panel schedule-panel" id="schedule">
+            <header class="section-heading">
+                <b>01</b>
+                <div>
+                    <h2>Stream Tracker</h2>
+                </div>
+            </header>
+
+            <div id="live-status" class="live-status">
+                <span>Checking Reine's stream status...</span>
+                <span class="loader"></span>
+            </div>
+
+            <div id="live-streams"></div>
+            <div id="upcoming-streams"></div>
+            <div id="live-collabs"></div>
+
+            <div class="stream-tabs">
+                <button type="button" class="stream-tab is-active" data-tab="past-videos">Recent Livestreams</button>
+                <button type="button" class="stream-tab" data-tab="past-collabs-videos">Recent Collabs</button>
+                <button type="button" class="stream-tab" data-tab="ori-songs-list">Original Songs</button>
+                <button type="button" class="stream-tab" data-tab="cover-songs-list">Cover Songs</button>
+            </div>
+
+            <div class="stream-tab-content is-active" id="past-videos">
+                <span>Loading past videos...</span>
+                <span class="loader"></span>
+            </div>
+
+            <div class="stream-tab-content" id="past-collabs-videos">
+                <span>Loading collabs...</span>
+                <span class="loader"></span>
+            </div>
+
+            <div class="stream-tab-content" id="ori-songs-list">
+                <span>Loading original songs...</span>
+                <span class="loader"></span>
+            </div>
+
+            <div class="stream-tab-content" id="cover-songs-list">
+                <span>Loading cover songs...</span>
+                <span class="loader"></span>
+            </div>
+        </section>
+
+        <aside class="sponsor-banner">
+            <span class="sponsor-label">Sponsored</span>
+
+            <a href="https://hololive-keyboards-shop.fourthwall.com/en-eur" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn2.imissreine.com/AD_NairdaPeanuts_1.webp" alt="Sponsor">
+            </a>
+        </aside>
+
+        <section class="menu-panel about-panel" id="about">
+            <header class="section-heading">
+                <b>02</b>
+                <div>
+                    <h2>About Reine</h2>
+                </div>
+            </header>
+
+            <p>Perhatian! Sang Putri Merak yang tertiup angin, Pavolia Reine dari Hololive Indonesia Generasi ke-2!</p>
+            <br>
+            <p>A lady peafowl, transported to our world due to a magical incident in her original world. Reine loves to stream mystery and detective games, alongside occasional othe genre of games like racing, hero shooter, rpgs, and a bunch of interesting games.
+            </p>
+            <br>
+            <p>
+                She also has her own original songs and does cover songs! Don't forget to check her youtube channel, and if possible,
+                <a href="https://www.youtube.com/@PavoliaReine"><span class="joinda-tooltip">
+                    JOINDA
+                    <span class="joinda-tooltip-text">
+                        "JOINDA" is Reine's way of saying "join membership" on her YouTube channel. No pressure of course. Or is it?
+                    </span>
+                </span></a>!
+            </p>
+            <br>
+            <p><strike>Don't worry, her membership is completely safe!</strike></p>
+        </section>
+
+        <div class="khodam-ad-row">
+            <section class="menu-panel khodam-panel" id="khodam">
+                <header class="section-heading">
+                    <b>03</b>
+                    <div>
+                        <h2>Khodam Generator</h2>
+                    </div>
+                </header>
+
+                <input type="hidden" id="image-url" value="{{ twitter_image_url }}">
+
+                <div class="khodam-content">
+                    <div class="khodam-controls">
+                        <p class="khodam-description">
+                            Enter the month of your birth and what day of the week it is to check your Khodam!
+                        </p>
+
+                        <label>
+                            <span>Month</span>
+                            <select id="month-select" onchange="checkSelection()">
+                                <option value="">Select Month</option>
+                                <option value="January">January</option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="October">October</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            <span>Day</span>
+                            <select id="day-select" onchange="checkSelection()">
+                                <option value="">Select Day</option>
+                                <option value="Monday">Monday</option>
+                                <option value="Tuesday">Tuesday</option>
+                                <option value="Wednesday">Wednesday</option>
+                                <option value="Thursday">Thursday</option>
+                                <option value="Friday">Friday</option>
+                                <option value="Saturday">Saturday</option>
+                                <option value="Sunday">Sunday</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            <span>Language</span>
+                            <select id="language-select">
+                                <option value="English">English</option>
+                                <option value="Bahasa Indonesia">Bahasa Indonesia</option>
+                            </select>
+                        </label>
+
+                        <div class="khodam-actions">
+                            <button type="button" id="confirm-selection" onclick="updateResult()">
+                                Confirm Selection
+                            </button>
+
+                            <button type="button" onclick="downloadImage()">
+                                Download Image
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="khodam-preview">
+                        <img
+                            id="reine-image"
+                            src="{% static 'home/img/reineboard.png' %}"
+                            alt="Reine"
+                        >
+                    </div>
+                </div>
+            </section>
+
+            <aside class="sponsor-poster">
+                <span class="sponsor-label">Sponsored</span>
+
+                <a href="https://youtu.be/VZ2qmOz3kEM?si=jXBQaZoKVfjRoXt-" target="_blank" rel="noopener noreferrer">
+                    <img src="https://cdn2.imissreine.com/AD_DA_4289.webp" alt="Sponsor">
+                </a>
+            </aside>
+        </div>
+
+        <aside class="sponsor-banner">
+            <span class="sponsor-label">Sponsored</span>
+
+            <a href="https://youtube.com/playlist?list=PLrALGrrF-6IWesmLn7OLKagskuRC8iYA-&si=V8r-7AgZWFkykk1j" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn2.imissreine.com/AD_NairdaPeanuts_2.webp" alt="Sponsor">
+            </a>
+        </aside>
+
+        <section class="menu-panel gallery-panel" id="gallery">
+            <header class="section-heading">
+                <b>04</b>
+                <div>
+                    <h2>Birthday gallery</h2>
+                </div>
+            </header>
+
+            <div id="submission_container" class="gallery-grid">
+                <p>Loading submissions...</p>
+            </div>
+        </section>
+
+        <section class="menu-panel messages-panel" id="messages">
+            <header class="section-heading">
+                <b>05</b>
+                <div>
+                    <h2>Birthday Messages</h2>
+                </div>
+            </header>
+
+            <div id="birthday_messages" class="message-grid">
+                <p>Loading birthday messages...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <strong>Reine Tea Party</strong>
+        <span>Website by StrikeDX / Auki, Design by GrygrFlzr</span>
+    </footer>
+</div>
+</body>
+</html>
