@@ -133,11 +133,13 @@ function createSubmissionModal(modalId, cdnUrl, artFiles, name, message, socialM
 
 function showModal(modalId) {
     $("#modal-" + modalId).addClass("is-active");
+    $("body").addClass("modal-open");
     loadCurrentSlide(modalId);
 }
 
 function closeModal(modalId) {
     $("#modal-" + modalId).removeClass("is-active");
+    $("body").removeClass("modal-open");
 }
 
 function loadCurrentSlide(modalId) {
@@ -273,7 +275,10 @@ function renderMessages(submissions) {
 }
 
 $(document).on("keydown", function (event) {
-    if (event.key === "Escape") $(".submission-modal.is-active").removeClass("is-active");
+    if (event.key === "Escape") {
+        $(".submission-modal.is-active").removeClass("is-active");
+        $("body").removeClass("modal-open");
+    }
 });
 
 function updateModalLayout(modalId, image) {
@@ -598,3 +603,13 @@ function initStreamTracker() {
         loadPlaylist(coverSongs, youtubeKey, "#cover-songs-list");
     }
 }
+
+const backToTop = document.getElementById("back-to-top");
+
+window.addEventListener("scroll", function () {
+    backToTop.classList.toggle("is-visible", window.scrollY > 500);
+});
+
+backToTop.addEventListener("click", function () {
+    window.scrollTo(0, 0);
+});

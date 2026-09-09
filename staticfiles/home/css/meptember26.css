@@ -1,5 +1,12 @@
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 120px;
+    --navy: #10265f;
+    --blue: #2857d7;
+    --pink: #df4d8b;
+    --mint: #77d7c6;
+    --yellow: #ffcf45;
+    --paper: #fffdf3;
 }
 
 html,
@@ -8,14 +15,36 @@ body {
     padding: 0;
 }
 
-.cafe-page {
-    --navy: #10265f;
-    --blue: #2857d7;
-    --pink: #df4d8b;
-    --mint: #77d7c6;
-    --yellow: #ffcf45;
-    --paper: #fffdf3;
+#back-to-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    color: white;
+    background: var(--pink);
+    border: 3px solid var(--navy);
+    border-radius: 50%;
+    box-shadow: 5px 5px 0 black;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    z-index: 1100;
+    font-size: 20px;
+}
 
+#back-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.cafe-page {
     min-height: 100vh;
     color: var(--navy);
     background:
@@ -37,13 +66,29 @@ main,
     margin-inline: auto;
 }
 
+.site-header-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background:
+        linear-gradient(90deg, transparent 49px, rgb(40 87 215 / 6%) 50px),
+        linear-gradient(transparent 49px, rgb(40 87 215 / 6%) 50px),
+        var(--paper);
+    background-size: 50px 50px;
+    border-bottom: 5px solid var(--navy);
+}
+
 .site-header {
+    width: min(1220px, calc(100% - 36px));
+    margin-inline: auto;
+    min-height: 96px;
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
     gap: 36px;
-    min-height: 96px;
-    border-bottom: 5px solid var(--navy);
+    border-bottom: none;
+    background: transparent;
 }
 
 .wordmark {
@@ -715,6 +760,12 @@ h2 {
     max-height: 25vh;
 }
 
+body.modal-open .site-header-wrap,
+body.modal-open #back-to-top {
+    z-index: 10;
+    pointer-events: none;
+}
+
 .joinda-tooltip {
     position: relative;
     display: inline-block;
@@ -859,6 +910,10 @@ h2 {
     font-size: 9px;
     font-weight: 900;
     text-transform: uppercase;
+}
+
+.sponsor-credit strong{
+    color: inherit;
 }
 
 .khodam-panel {

@@ -11,12 +11,6 @@ from django.urls import reverse
 from django.conf import settings
 # Create your views here.
 
-def new_home(request):
-    context = {
-        'digital_ocean_url': settings.R2_2026_BUCKET
-    }
-    return render(request, 'home/new_home.html', context)
-
 def meptember26(request):
     # Default values for month, day, and language
     month = request.GET.get('month', 'January')

@@ -45,7 +45,9 @@
     {
         "Name": "RyukoT72",
         "SocialMedia": "https://www.youtube.com/@Ryuko-T72 (youtube)",
-        "Message": [],
+        "Message": [
+            "I took a trip last year to Iceland, we flew from Toronto to Reykjavik. I got to see greenland on the fly over (beautiful and snowy!) We went to a hotel and then took a 4 hour car ride in the worst van I've ever seen ( a renault), we went to see a beach with black sand. It was a waste of time, I was extremely tired and miserable (was up since 6 am the previous morning since I got the departure time wrong). Got on the Cruise ship the next day, from there we sailed to different stops along the coast, I would occasionally take picturs with my Reine keychain and hololive city card (although they didn't always come out well). We visited fjords, waterfalls, beautiful mountain ranges (I've never seen such a barren and beautiful countryside before), we went to a hotspring, ate soup out of a giant loaf of bread, and finally went to head back home,"
+        ],
         "Art": [
             "RyukoT72.webp"
         ],
@@ -291,8 +293,7 @@
         "Name": "NairdaPeanuts",
         "SocialMedia": "https://x.com/Nairdapeanuts",
         "Message": [
-            "Happy Birthday Reine !! Wishing you so much success and favorable health next year. Here's to many more amazing moment in 2027 !!!",
-            "(already sent)"
+            "Happy Birthday Reine !! Wishing you so much success and favorable health next year. Here's to many more amazing moment in 2027 !!!"
         ],
         "Art": [
             "AD_NairdaPeanuts_1.webp",
@@ -501,7 +502,7 @@
     },
     {
         "Name": "Flowerbelle",
-        "SocialMedia": "kroniisub797435",
+        "SocialMedia": "Flowerbelle",
         "Message": [
             "I really enjoy your streams it feels nice to participate and sometimes you read my messages, I hope you continue streaming for a long time"
         ],
@@ -526,6 +527,124 @@
             "Hi Reine! Happy birthday to you! I hope you have an amazing birthday, and I wish you all the best! Thank you for always entertaining us, especially me! I really love your streams, and I also enjoy listening to your original songs.\nPlease continue enjoying your journey and keep doing your best, Reine! Don’t forget to take care of yourself and get enough rest. I’m really grateful that I got to find you and enjoy all the things you create. Once again, happy birthday, Reine!💙"
         ],
         "Art": [],
+        "Tag": []
+    },
+    {
+        "Name": "rxwunder",
+        "SocialMedia": "https://x.com/rx_wunder",
+        "Message": [
+            "Met ultah, semoga panjang umur dan sehat selalu, tan!! Thank you for bringing some rays of sunshine during rainy days!!"
+        ],
+        "Art": [
+            "rxwunder.webp"
+        ],
+        "Tag": []
+    },
+    {
+        "Name": "Sawako",
+        "SocialMedia": "https://x.com/sawakoyuu",
+        "Message": [
+            "Happy birthday Reine! I know you are hardworking and I wish you success. Have a blast birthday 🎊"
+        ],
+        "Art": [],
+        "Tag": []
+    },
+    {
+        "Name": "blackbomb",
+        "SocialMedia": "https://x.com/blkbomb",
+        "Message": [
+            "Reine! Happy Birthday! I hope this next year we keep having a lot of fun and keep learning a lot, be it inside the classroom or outside of it! Wishing you lots of health and happiness and fun times!"
+        ],
+        "Art": [
+            "AD_blackbomb.webp"
+        ],
+        "Tag": [
+            "AD"
+        ]
+    },
+    {
+        "Name": "Ark",
+        "SocialMedia": "https://x.com/NotABadReptile",
+        "Message": [],
+        "Art": [
+            "Ark.webp"
+        ],
+        "Tag": []
+    },
+    {
+        "Name": "Galkan",
+        "SocialMedia": "Galkan",
+        "Message": [
+            "Selamat ulang tahun, Reine! 💙\nMay this special day grant you health, willpower and fortune for long years to come. Life would not be the same without your lovely and entertaining presence. Forever a MERAKyat, mep-mep."
+        ],
+        "Art": [],
+        "Tag": []
+    },
+    {
+        "Name": "zipli",
+        "SocialMedia": "https://x.com/zipli_",
+        "Message": [],
+        "Art": [
+            "zipli.webp"
+        ],
+        "Tag": []
+    },
+    {
+        "Name": "Lamentori",
+        "SocialMedia": "https://x.com/Lamentoriii",
+        "Message": [
+            "Happy happyyy birthday Reine! I hope you have an amazing day today! May the next year bring even more happiness and opportunities than the last. Stay amazing and cool as always B) !!"
+        ],
+        "Art": [
+            "Lamentori.webp"
+        ],
+        "Tag": []
+    },
+    {
+        "Name": "Franzise",
+        "SocialMedia": "twitter.com/Franzise2",
+        "Message": [
+            "Happy birthday, and thank you so much for being with us these nearly six years, Reine~! ∞<3"
+        ],
+        "Art": [],
+        "Tag": []
+    },
+    {
+        "Name": "SharkyDoko",
+        "SocialMedia": "https://x.com/SharkyDoko",
+        "Message": [
+            "Happy Birthday Reine~ \nIt's that time of the year again, hope you have a wonderful birthday!!"
+        ],
+        "Art": [],
+        "Tag": []
+    },
+    {
+        "Name": "zedxxx",
+        "SocialMedia": "https://x.com/zedxxx666",
+        "Message": [
+            "Happy Birthday Reine! 💙 💙 💙"
+        ],
+        "Art": [
+            "zedxxx.webp"
+        ],
+        "Tag": []
+    },
+    {
+        "Name": "OneCircle",
+        "SocialMedia": "https://x.com/_OneCircle",
+        "Message": [
+            "Happy Birthday Reine!! Semoga tetep sehat, makin cantik, makin lucu, makin bijak, dan semua-muanyanya lah. Wishing you all the best every day, every year! love ❤️"
+        ],
+        "Art": [],
+        "Tag": []
+    },
+    {
+        "Name": "Natsume",
+        "SocialMedia": "natsume_roll",
+        "Message": [],
+        "Art": [
+            "Natsume.webp"
+        ],
         "Tag": []
     }
 ]

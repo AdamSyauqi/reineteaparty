@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reine Tea Party</title>
 
-    <meta content="reineteaparty/" property="og:title" />
+    <meta content="Reine Tea Party!" property="og:title" />
     <meta content="Celebrate Pavolia Reine's 2026 Birthday!" property="og:description" />
     <meta content="http://www.reineteaparty.com/" property="og:url" />
     <meta content="http://www.reineteaparty.com/static/home/img/mepcake.webp" property="og:image" />
@@ -30,27 +30,33 @@
     <script src="{% static 'home/js/meptember26.js' %}" defer></script>
 </head>
 
+<button id="back-to-top" type="button" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
 <body>
 <div class="cafe-page">
-    <header class="site-header">
-        <a class="wordmark" href="#top">
-            <strong>REINE</strong>
-            <span>TEA PARTY</span>
-        </a>
+    <div class="site-header-wrap">
+        <header class="site-header">
+            <a class="wordmark" href="#top">
+                <strong>REINE</strong>
+                <span>TEA PARTY</span>
+            </a>
 
-        <nav aria-label="Primary navigation">
-            <a href="#about">About</a>
-            <a href="#schedule">Streams</a>
-            <a href="#khodam">Khodam</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#messages">Messages</a>
-        </nav>
+            <nav aria-label="Primary navigation">
+                <a href="#about">About</a>
+                <a href="#schedule">Streams</a>
+                <a href="#khodam">Khodam</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#messages">Messages</a>
+            </nav>
 
-        <div class="date-chip">
-            <small>2026</small>
-            <strong>09.09</strong>
-        </div>
-    </header>
+            <div class="date-chip">
+                <small>2026</small>
+                <strong>09.09</strong>
+            </div>
+        </header>
+    </div>
 
     <main id="top">
         <section class="hero">
@@ -147,6 +153,8 @@
             <a href="https://hololive-keyboards-shop.fourthwall.com/en-eur" target="_blank" rel="noopener noreferrer">
                 <img src="https://cdn2.imissreine.com/AD_NairdaPeanuts_1.webp" alt="Sponsor">
             </a>
+
+            <p class="sponsor-credit"><strong>Art by NairdaPeanuts</strong></p>
         </aside>
 
         <section class="menu-panel about-panel" id="about">
@@ -261,6 +269,8 @@
                 <a href="https://youtu.be/VZ2qmOz3kEM?si=jXBQaZoKVfjRoXt-" target="_blank" rel="noopener noreferrer">
                     <img src="https://cdn2.imissreine.com/AD_DA_4289.webp" alt="Sponsor">
                 </a>
+
+                <p class="sponsor-credit"><strong>Art by DA_4289</strong></p>
             </aside>
         </div>
 
@@ -270,6 +280,8 @@
             <a href="https://youtube.com/playlist?list=PLrALGrrF-6IWesmLn7OLKagskuRC8iYA-&si=V8r-7AgZWFkykk1j" target="_blank" rel="noopener noreferrer">
                 <img src="https://cdn2.imissreine.com/AD_NairdaPeanuts_2.webp" alt="Sponsor">
             </a>
+
+            <p class="sponsor-credit"><strong>Art by NairdaPeanuts</strong></p>
         </aside>
 
         <section class="menu-panel gallery-panel" id="gallery">
@@ -284,6 +296,16 @@
                 <p>Loading submissions...</p>
             </div>
         </section>
+
+        <aside class="sponsor-banner">
+            <span class="sponsor-label">Sponsored</span>
+
+            <a href="https://www.youtube.com/playlist?list=PLrALGrrF-6IXJmqtqVxjyUvOsFgIwrAwj" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn2.imissreine.com/AD_blackbomb.webp" alt="Sponsor">
+            </a>
+
+            <p class="sponsor-credit"><strong>Art by blackbomb</strong></p>
+        </aside>
 
         <section class="menu-panel messages-panel" id="messages">
             <header class="section-heading">
