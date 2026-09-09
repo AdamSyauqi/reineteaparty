@@ -51,7 +51,7 @@
                 <span>TEA PARTY</span>
             </a>
 
-            <nav aria-label="Primary navigation">
+            <nav class="desktop-nav" aria-label="Primary navigation">
                 <a href="#about">About</a>
                 <a href="#schedule">Streams</a>
                 <a href="#khodam">Khodam</a>
@@ -59,10 +59,32 @@
                 <a href="#messages">Messages</a>
             </nav>
 
-            <div class="date-chip">
-                <small>2026</small>
-                <strong>09.09</strong>
+            <div class="header-actions">
+                <div class="date-chip">
+                    <small>2026</small>
+                    <strong>09.09</strong>
+                </div>
+
+                <button
+                    class="burger-button"
+                    id="burger-button"
+                    type="button"
+                    aria-label="Open navigation"
+                    aria-expanded="false"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
+
+            <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+                <a href="#about">About</a>
+                <a href="#schedule">Streams</a>
+                <a href="#khodam">Khodam</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#messages">Messages</a>
+            </nav>
         </header>
     </div>
 

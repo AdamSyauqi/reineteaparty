@@ -613,3 +613,25 @@ window.addEventListener("scroll", function () {
 backToTop.addEventListener("click", function () {
     window.scrollTo(0, 0);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const burgerButton = document.getElementById("burger-button");
+    const mobileNav = document.getElementById("mobile-nav");
+
+    if (!burgerButton || !mobileNav) {
+        console.error("Burger menu elements not found");
+        return;
+    }
+
+    burgerButton.addEventListener("click", function () {
+        const isOpen = mobileNav.classList.toggle("is-open");
+        burgerButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    mobileNav.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            mobileNav.classList.remove("is-open");
+            burgerButton.setAttribute("aria-expanded", "false");
+        });
+    });
+});
