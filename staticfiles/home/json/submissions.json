@@ -646,5 +646,25 @@
             "Natsume.webp"
         ],
         "Tag": []
+    },
+    {
+        "Name": "StrikeDX",
+        "SocialMedia": "https://x.com/StrikeDX",
+        "Message": [
+            "Happy birthday Reine! Wish you a wonderful life and journey ahead! Hope you like our present for you!"
+        ],
+        "Art": [],
+        "Tag": []
+    },
+    {
+        "Name": "Kuritikamu",
+        "SocialMedia": "https://x.com/kuritikamu",
+        "Message": [
+            "Happy Birthday Reine! Terima kasih telah menjadi bagian dari inspirasi dan motivasiku untuk terus berkarya. Semoga sukses terus kedepannya"
+        ],
+        "Art": [
+            "Kuritikamu.webp"
+        ],
+        "Tag": []
     }
 ]
