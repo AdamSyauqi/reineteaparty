@@ -620,8 +620,6 @@ h2 {
 .submission-info {
     flex: 0 0 auto;
     width: min(360px, 32vw);
-    min-width: 240px;
-    max-width: 360px;
     max-height: 90vh;
     padding: 32px;
     box-sizing: border-box;
@@ -634,6 +632,8 @@ h2 {
 .submission-name {
     margin-top: 0;
     color: #111;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .submission-message {
